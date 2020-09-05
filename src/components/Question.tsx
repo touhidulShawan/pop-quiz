@@ -7,6 +7,8 @@ export interface Props {
   userAnswer: UserAnswer | undefined;
   questionNumber: number;
   totalQuestions: number;
+  correctAnswer: string;
+  giveAnswer: boolean;
   handleCheckAnswer: (evt: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -16,19 +18,22 @@ const Question: React.FC<Props> = ({
   userAnswer,
   questionNumber,
   totalQuestions,
+  correctAnswer,
+  giveAnswer,
   handleCheckAnswer,
 }) => {
   return (
-    <div>
-      <p>
+    <div className="bg-pink-100 tracking-wide p-4">
+      <p className="font-bold uppercase mb-3 text-pink-700">
         Questions: {questionNumber} / {totalQuestions}
       </p>
-      <p dangerouslySetInnerHTML={{ __html: question }} />
+      <p className="mb-3  " dangerouslySetInnerHTML={{ __html: question }} />
       <div>
         {answers.map((ans) => {
           return (
             <div key={ans}>
               <button
+                className="shadow-outline py-1 px-4 my-4 rounded-full block w-full"
                 disabled={userAnswer ? true : false}
                 value={ans}
                 onClick={handleCheckAnswer}
@@ -39,6 +44,11 @@ const Question: React.FC<Props> = ({
           );
         })}
       </div>
+      {giveAnswer ? (
+        <span className="text-pink-700 tracking-wide">
+          Correct answer: {correctAnswer}
+        </span>
+      ) : null}
     </div>
   );
 };

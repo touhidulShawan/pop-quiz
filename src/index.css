@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -18453,6 +18453,29 @@ video {
 
 .animate-bounce{
   animation: bounce 1s infinite;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  letter-spacing: 0.025em;
+  border-radius: 0.125rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom-width: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: 0;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 @media (min-width: 640px){
